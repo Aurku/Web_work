@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>个人网站 - 计算机科学与技术专业</title>
+    <style>
+        :root {
+            --primary-blue: #0abab5;
+            --primary-green: #006140;
+            --gray-bg: #f5f5f5;
+            --card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: white;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* 顶部区域 */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-blue);
+        }
+
+        .banner {
+            height: 500px;
+            background: linear-gradient(rgba(245, 245, 245, 0.8), rgba(245, 245, 245, 0.8)),
+                url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 500"><rect fill="%23f0f8ff" width="1200" height="500"/><path d="M0,250 L1200,250 M600,0 L600,500" stroke="%23d0e8e0" stroke-width="40"/></svg>');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 70px;
+        }
+
+        .banner h1 {
+            font-size: 3rem;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .banner h2 {
+            font-size: 1.5rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+
+        .banner p {
+            font-size: 1.1rem;
+            color: #666;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 5px 15px;
+            border-radius: 20px;
+        }
+
+        /* 内容区域通用样式 */
+        section {
+            padding: 80px 0;
+            scroll-margin-top: 70px;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            color: #333;
+        }
+
+        .section-title i {
+            margin-right: 10px;
+            font-size: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+        }
+
+        .row {
+            display: flex;
+            margin: 0 -15px;
+        }
+
+        .col {
+            flex: 1;
+            padding: 0 15px;
+        }
+
+        /* 教育背景区 */
+        #education .card {
+            height: 100%;
+        }
+
+        .education-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .education-list li:before {
+            content: '•';
+            color: var(--primary-blue);
+            position: absolute;
+            left: 0;
+        }
+
+        .competition-list li {
+            margin-bottom: 8px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        /* 专业技能区 */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .skill-card {
+            flex: 1 0 calc(33.333% - 20px);
+            min-width: 250px;
+        }
+
+        .skill-card h4 {
+            margin-bottom: 15px;
+            color: var(--primary-green);
+        }
+
+        /* 实践经历区 */
+        .timeline {
+            position: relative;
+            padding: 30px 0;
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--primary-blue);
+        }
+
+        .timeline-date {
+            font-weight: bold;
+            color: var(--primary-green);
+            margin-bottom: 5px;
+        }
+
+        /* 校园职务区 */
+        .campus-container {
+            display: flex;
+            gap: 30px;
+        }
+
+        .campus-card {
+            flex: 1;
+        }
+
+        /* 个人风采区 */
+        .hobbies-list li {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hobbies-list i {
+            margin-right: 10px;
+            color: var(--primary-green);
+        }
+
+        .self-evaluation {
+            margin-top: 30px;
+        }
+
+        .self-evaluation p:nth-child(1) {
+            color: var(--primary-green);
+            font-family: '仿宋', serif;
+            margin-bottom: 20px;
+        }
+
+        .self-evaluation p:nth-child(2) {
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-family: '宋体', serif;
+        }
+
+        /* 联系区 */
+        .contact-list li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-list i {
+            margin-right: 10px;
+            color: var(--primary-green);
+            width: 20px;
+            text-align: center;
+        }
+
+        /* 底部区域 */
+        footer {
+            background: var(--gray-bg);
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .banner h1 {
+                font-size: 2rem;
+            }
+
+            .banner h2 {
+                font-size: 1.2rem;
+            }
+
+            .row,
+            .campus-container {
+                flex-direction: column;
+            }
+
+            .skills-container {
+                flex-direction: column;
+            }
+
+            .skill-card {
+                width: 100%;
+            }
+
+            .timeline-item {
+                padding-left: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 顶部区域 -->
+    <header>
+        <nav class="container">
+            <div class="logo">个人网站</div>
+            <ul class="nav-links">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#education">教育背景</a></li>
+                <li><a href="#skills">技能&比赛</a></li>
+                <li><a href="#experience">实践经历</a></li>
+                <li><a href="#campus">校园职务</a></li>
+                <li><a href="#hobbies">个人风采</a></li>
+                <li><a href="#contact">联系我</a></li>
+            </ul>
+            <div class="hamburger">☰</div>
+        </nav>
+    </header>
+
+    <div class="banner" id="home">
+        <h1>XXX</h1>
+        <h2>计算机科学与技术专业 · 本科毕业生</h2>
+        <p>XX大学 | 2020.09-2024.06</p>
+    </div>
+
+    <!-- 中间主体 -->
+    <main class="container">
+        <!-- 教育背景区 -->
+        <section id="education">
+            <div class="section-title">
+                 教育背景 & 竞赛经历
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <h3>毕业院校信息</h3>
+                        <p><strong>院校名称：</strong>XX大学</p>
+                        <p><strong>学习时长：</strong>2020.09-2024.06（4年全日制本科）</p>
+                        <p><strong>专业：</strong>计算机科学与技术</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card">
+                        <h3>优势学科</h3>
+                        <ul class="education-list">
+                            <li>数据结构与算法：92分</li>
+                            <li>人工智能导论：90分</li>
+                            <li>计算机网络：88分</li>
+                        </ul>
+                        <h3 style="margin-top: 20px;">比赛经历</h3>
+                        <ul class="competition-list">
+                            <li><span>2023年</span> <span>全国大学生数学建模竞赛 · 省级二等奖</span></li>
+                            <li><span>2022年</span> <span>学校计算机程序设计大赛 · 校级一等奖</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 专业技能区 -->
+        <section id="skills">
+            <div class="section-title">
+                 专业技能
+            </div>
+            <div class="skills-container">
+                <div class="skill-card card">
+                    <h4>编程语言</h4>
+                    <p><strong>熟练：</strong>Python、Java</p>
+                    <p><strong>基础：</strong>C++</p>
+                </div>
+                <div class="skill-card card">
+                    <h4>工具与框架</h4>
+                    <p><strong>精通：</strong>MySQL、Git</p>
+                    <p><strong>熟悉：</strong>TensorFlow、Figma</p>
+                </div>
+                <div class="skill-card card">
+                    <h4>其他技能</h4>
+                    <p>PS简单图片处理</p>
+                    <p>Office高级功能</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 实践经历区 -->
+        <section id="experience">
+            <div class="section-title">
+                实践经历
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">2023.07-2023.09</div>
+                    <h4>XX科技公司 | 后端开发实习生</h4>
+                    <p>负责用户模块接口编写，优化后响应速度提升30%</p>
+                    <p>协助排查Bug，整理测试报告</p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2022.03-2022.12</div>
+                    <h4>学校科研项目 | “智能校园导航系统”核心成员</h4>
+                    <p>设计路径规划算法，完成地图数据录入</p>
+                    <p>组织测试与反馈迭代，推动项目上线</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 校园职务区 -->
+        <section id="campus">
+            <div class="section-title">
+                </i> 校园职务 & 德育表现
+            </div>
+            <div class="campus-container">
+                <div class="campus-card card">
+                    <h3>校园职务</h3>
+                    <p><strong>班级学习委员(2021.09-2023.06):</strong>组织8场学习分享会,获“优秀学生干部”</p>
+                    <p><strong>校学生会学术部干事(2022.03-2023.03):</strong>策划“校园学术文化节”,更新200+篇文献</p>
+                </div>
+                <div class="campus-card card">
+                    <h3>德育表现</h3>
+                    <p><strong>德育分：</strong>本科期间均为A级</p>
+                    <p><strong>志愿服务：</strong>累计120小时(社区防疫、校园清扫等)</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 个人风采区 -->
+        <section id="hobbies">
+            <div class="section-title">
+                </i> 个人风采
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <h3>兴趣爱好</h3>
+                        <ul class="hobbies-list">
+                            <li><i>📚</i> 技术探索：读专业书籍、写技术博客（10余篇）</li>
+                            <li></i> 运动健身：每周3次篮球，获校园联赛“最佳拼搏奖”</li>
+                            <li></i> 文艺创作：硬笔书法，获校园文化节三等奖</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card self-evaluation">
+                        <h3>自我评价</h3>
+                        <p>具备扎实的计算机专业基础和较强的实践能力，对技术有浓厚兴趣和钻研精神。在团队中能积极沟通协作，面对问题时善于思考并寻找解决方案。</p>
+                        <p>性格开朗乐观，有责任心，注重细节，始终保持学习热情，期待在专业领域持续成长，为相关工作贡献力量。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 联系区 -->
+        <section id="contact">
+            <div class="section-title">
+                </i> 联系我
+            </div>
+            <div class="card">
+                <ul class="contact-list">
+                    <li><i>📧</i> 邮箱：<a href="mailto:XXX@xxx.com">XXX@xxx.com</a></li>
+                    <li></i> 电话：138-XXXX-XXXX</li>
+                    <li></i> GitHub：<a href="#">github.com/yourname</a></li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- 底部区域 -->
+    <footer>
+        <div class="container">
+            <p>© 2024 XXX · 个人网站 | 保留所有权利</p>
+        </div>
+    </footer>
+</body>
+
+</html>
