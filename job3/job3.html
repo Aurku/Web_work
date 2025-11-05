@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>贝斯社招新网站</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .nav-link {
+            color: blue;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 20px 0;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1. 背景音乐控制 -->
+    <audio id="bgMusic" controls loop style="display:none;">
+        <source src="Aruarian dance.mp3" type="audio/mp3"> 
+    </audio>
+    <button onclick="document.getElementById('bgMusic').play()">播放背景音乐</button>
+
+    <!-- 2. 导航链接 -->
+    <h2>
+        <a href="#intro" class="nav-link">社团简介</a> |
+        <a href="#schedule" class="nav-link">活动安排</a> |
+        <a href="#gallery" class="nav-link">风采展示</a> |
+        <a href="#stories" class="nav-link">社员故事</a> |
+        <a href="#signup" class="nav-link">在线报名</a>
+    </h2>
+
+    <!-- 3. 社团简介 -->
+    <section id="intro">
+        <h2>贝斯社社团简介</h2>
+        <p>贝斯社社团简介
+        ——低音乐器的灵魂，节奏的掌控者
+        
+        一、社团起源与使命
+        贝斯社成立于2015年，前身为校园电声乐队低音部，后独立发展为专注贝斯演奏与推广的社团。
+        社团以“让贝斯之声被听见”为核心理念，致力于打破“贝斯是配角”的刻板印象，通过教学、演出与创作，展现贝斯作为音乐骨架的独特魅力。
+        
+        社团创始人李明（现任指导老师）曾表示：“贝斯是音乐的根基，它像心跳一样稳定，却常被忽视。我们希望每个成员都能在这里找到属于自己的节奏。”目前，社团拥有注册成员80余人，涵盖电贝斯、木贝斯、尤克里里贝斯等多种类型，活跃于校园晚会、音乐节及社区公益演出。
+        
+        二、核心活动与特色
+        系统化教学体系
+        每周开设贝斯基础课与进阶技巧课，覆盖指法、节奏型、音阶训练等内容。
+        特色课程包括《Slap技巧实战》《即兴创作入门》《贝斯与鼓的配合》，由校内外专业乐手授课。
+        提供免费乐器借用服务，降低新手入门门槛。
+        多元化演出平台
+        年度专场音乐会：以全贝斯阵容演绎流行、摇滚、爵士等风格，2024年专场《低音革命》吸引500余名观众。
+        跨社团合作：与吉他社、鼓社组成联合乐队，参与“校园原创音乐大赛”，获最佳编曲奖。
+        街头快闪：定期在校园广场、地铁站进行即兴表演，传播贝斯文化。
+        创作与交流社区
+        设立“贝斯创作工坊”，鼓励成员编写原创曲目，优秀作品收录至社团年度专辑《Bassline Chronicles》。
+        线上论坛“Bass Family”提供乐理讨论、设备评测、演出机会分享等功能，累计发帖超2000条。
+        三、社员成长与故事
+        从零到舞台的蜕变
+        2022级成员张雨桐分享：“入学前我从未接触过乐器，加入贝斯社后，学长手把手教我持琴姿势，三个月后就能在迎新晚会上独奏《Come Together》。现在，我已经是校乐队的首席贝斯手！”
+        跨专业的音乐碰撞
+        计算机系成员王浩将编程与贝斯结合，开发了“节奏训练APP”，通过游戏化方式帮助新手练习节拍感，该应用获校创新创业大赛银奖。
+        社会责任感传递
+        社团连续三年赴自闭症儿童康复中心开展音乐疗愈活动，用贝斯的低频震动缓解儿童焦虑情绪。2024年活动被《本地日报》报道，标题为《一群大学生的“低音温暖”》。
+        四、未来展望
+        贝斯社计划在2025年完成以下目标：
+        
+        组建全女子贝斯乐队，挑战传统性别刻板印象；
+        出版首部《贝斯入门指南》电子书，免费向高校音乐社团开放；
+        与本地录音棚合作，为优秀成员提供专业录音机会。
+        “贝斯不是背景，而是音乐的脊梁。” 无论你是想掌握一门乐器，还是寻找志同道合的伙伴，贝斯社都将为你提供最专业的指导与最温暖的归属感。
+        
+        加入我们，让低音震撼世界！
+        （报名方式详见作业“在线报名”板块）</p>
+        <a href="#" class="back-to-top">返回顶部</a>
+    </section>
+
+    <!-- 4. 活动安排表格 -->
+    <section id="schedule">
+        <h2>2025年春季学期活动安排表</h2>
+        <table>
+            <tr>
+                <th colspan="4">贝斯社 2025年春季学期活动安排表</th>
+            </tr>
+            <tr>
+                <td>时间</td>
+                <td>活动名称</td>
+                <td>地点</td>
+                <td>备注</td>
+            </tr>
+            <tr>
+                <td>3月5日</td>
+                <td>新成员见面会</td>
+                <td rowspan="2">音乐厅101</td> <!-- 跨行示例 -->
+                <td>必参加</td>
+            </tr>
+            <tr>
+                <td>3月12日</td>
+                <td>贝斯基础教学公开课</td>
+                <td>需自带乐器</td>
+            </tr>
+        </table>
+        <a href="#" class="back-to-top">返回顶部</a>
+    </section>
+
+    <!-- 5. 风采展示（图片+超链接） -->
+    <section id="gallery">
+        <h2>风采展示</h2>
+        <a href="club_intro.html">
+            <img src="beisi.png" alt="贝斯社日常演奏" style="width:300px;"> 
+        </a>
+        <a href="#" class="back-to-top">返回顶部</a>
+    </section>
+
+    <!-- 6. 视频导入 -->
+    <section>
+        <h2>精彩视频</h2>
+        <embed src="shipin.mp4" type="video/mp4" width="500" height="300"> 
+    </section>
+
+    <!-- 7. 社员故事 -->
+    <section id="stories">
+        <h2>社员故事</h2>
+        <p>[此处插入文心一言生成的1000字贝斯社日常故事，示例节选]...</p>
+        <a href="#" class="back-to-top">返回顶部</a>
+    </section>
+
+    <!-- 8. 在线报名表 -->
+    <section id="signup">
+        <h2>贝斯社在线报名表</h2>
+        <form action="#" method="post">
+            <table>
+                <tr>
+                    <td>姓名</td>
+                    <td><input type="text" name="name"></td>
+                </tr>
+                <tr>
+                    <td>性别</td>
+                    <td>
+                        <input type="radio" name="gender" value="男">男
+                        <input type="radio" name="gender" value="女">女
+                    </td>
+                </tr>
+                <tr>
+                    <td>出生日期</td>
+                    <td>
+                        <input type="text" name="year" placeholder="年">
+                        <input type="text" name="month" placeholder="月">
+                        <input type="text" name="day" placeholder="日">
+                    </td>
+                </tr>
+                <tr>
+                    <td>手机邮箱</td>
+                    <td>
+                        <input type="text" name="phone" placeholder="手机">
+                        <input type="text" name="email" placeholder="邮箱">
+                    </td>
+                </tr>
+                <tr>
+                    <td>贝斯基础</td>
+                    <td>
+                        <input type="radio" name="skill" value="有">有
+                        <input type="radio" name="skill" value="无">无
+                    </td>
+                </tr>
+                <tr>
+                    <td>兴趣方向</td>
+                    <td>
+                        <input type="checkbox" name="interest" value="演奏">演奏
+                        <input type="checkbox" name="interest" value="创作">创作
+                    </td>
+                </tr>
+                <tr>
+                    <td>年级</td>
+                    <td>
+                        <select name="grade">
+                            <option>大一</option>
+                            <option>大二</option>
+                            <option>大三</option>
+                            <option>大四</option>
+                            <option>研究生</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>自我介绍</td>
+                    <td>
+                        <textarea name="intro" rows="4" cols="50" placeholder="请简单介绍自己、以及加入贝斯社的理由..."></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td>服从安排</td>
+                    <td>
+                        <input type="radio" name="obey" value="是">是
+                        <input type="radio" name="obey" value="否">否
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <input type="submit" value="提交">
+                        <input type="reset" value="重置">
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </section>
+</body>
+
+</html>
