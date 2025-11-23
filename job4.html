@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>影像与文学讨论夜 · Film & Literature Talk</title>
+    <style>
+        /* 【要求3】声明 .page 样式 */
+        .page {
+            display: inline-block;
+            /* 尾号8 专属背景色：晨光杏色 */
+            background-color: #FFECD6;
+            box-shadow: 0 0 30px rgba(80, 58, 35, 0.25);
+            text-align: left;
+            max-width: 720px;
+            padding: 20px;
+            /* 增加内边距以优化视觉效果 */
+        }
+
+        /* 【要求5-③】并集选择器 */
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Microsoft YaHei", sans-serif;
+            color: #2c3e50;
+        }
+
+        /* 【要求5-④】ID选择器 p#intro：需显示强调 */
+        p#intro {
+            color: #d35400;
+            font-weight: bold;
+            background-color: rgba(255, 255, 255, 0.6);
+            padding: 10px;
+            border-left: 5px solid #d35400;
+        }
+
+        /* 【要求5-⑥】伪元素 p::first-letter */
+        p::first-letter {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #8e44ad;
+        }
+
+        /* 【要求5-⑥】伪元素 div::first-line (此处应用于公告区) */
+        div.notice::first-line {
+            color: #c0392b;
+            font-weight: bold;
+        }
+
+        /* 【要求5-②】链接伪类 */
+        a:link {
+            text-decoration: none;
+            color: #2980b9;
+        }
+
+        a:visited {
+            color: #7f8c8d;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #e67e22;
+        }
+
+        a:active {
+            color: #e74c3c;
+        }
+
+        /* 【要求5-⑤】带类名的链接 */
+        a.red {
+            color: red !important;
+            font-weight: bold;
+        }
+
+        a.blue {
+            color: blue !important;
+            font-weight: bold;
+        }
+
+        /* 【要求5-①】后代选择器 div table a */
+        /* 仅当div里的table里有超级链接才会触发 */
+        div table a {
+            color: #16a085;
+            font-style: italic;
+            border-bottom: 1px dashed #16a085;
+        }
+
+        /* 表格通用样式 */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid #7f8c8d;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: center;
+        }
+
+        /* 布局辅助 */
+        div {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page">
+
+        <div>
+            <h1>影像与文学讨论夜 · Film & Literature Talk</h1>
+        </div>
+
+        <div>
+            <h2 id="intro">活动介绍</h2>
+
+            <p>在这个快节奏的时代，我们常常忘记停下来思考影像背后的文学深意。本周五晚，我们将重温经典，探讨光影与文字交织的魅力。无论是宫崎骏的奇幻世界，还是黑白胶片里的旧时光，都值得我们细细品味。</p>
+
+            <p>我们将特别讨论电影《千与千寻》中的隐喻与成长主题，以及它如何通过视觉语言重构了现实世界的规则。正如那句台词所说：“不要回头，一直向前。”文学与电影的结合，往往能带给我们直击心灵的力量。</p>
+
+            <p id="intro">重要提示：请参与者提前观看本期讨论的影片，并准备好至少3分钟的分享内容，活动将于晚间 19:00 准时开始。</p>
+        </div>
+
+        <div>
+            <h3>报名人员名单</h3>
+            <table>
+                <tr>
+                    <th>序号</th>
+                    <th>姓名</th>
+                    <th>讨论主题</th>
+                    <th>推荐参考链接</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>张伟</td>
+                    <td>《小王子》中的成人童话</td>
+                    <td><a href="#">书籍详情</a></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Emily</td>
+                    <td>《傲慢与偏见》影视改编对比</td>
+                    <td><a href="#">影评链接</a></td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>刘波</td>
+                    <td>诺兰电影的时间哲学</td>
+                    <td>暂无链接</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>王芳</td>
+                    <td>《红楼梦》的影像化尝试</td>
+                    <td><a href="#">资料库</a></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>陈静</td>
+                    <td>哈利波特与魔法世界构建</td>
+                    <td><a href="#">Wiki页</a></td>
+                </tr>
+            </table>
+        </div>
+
+        <div>
+            <div>
+                <a href="https://hongchenwusdnu.github.io/bookstore/job4.html" class="red" target="_blank">
+                    >>> 查看往期活动照片 (点击跳转)
+                </a>
+                <br><br>
+                <a href="job3.html" class="blue" target="_blank">
+                    >>> 在线咨询活动详情 (联系我们)
+                </a>
+            </div>
+        </div>
+
+        <div class="notice">
+            1. 本次活动提供免费茶水与点心，欢迎自备水杯。<br>
+            2. 下期预告：我们将讨论科幻文学中的未来城市想象。<br>
+            3. 如遇天气原因活动改期，请留意群内通知，谢谢配合！
+        </div>
+
+    </div>
+
+</body>
+
+</html>
