@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>惊喜时刻</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #000;
+            /* 背景改为黑色，更有电影感 */
+            font-family: "Microsoft YaHei", sans-serif;
+            text-align: center;
+            color: white;
+        }
+
+        /* 彩色五个大字 */
+        .scolding {
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            /* 自动根据屏幕大小缩放字号 */
+            font-weight: 900;
+            margin-bottom: 30px;
+            background: linear-gradient(to right, #ff2400, #e81d1d, #e8b21d, #1de840, #1ddde8, #2b1de8, #dd00f3, #ff2400);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbow 3s linear infinite;
+            /* 让彩虹色动起来 */
+        }
+
+        @keyframes rainbow {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        /* 视频容器 */
+        .video-wrapper {
+            width: 90%;
+            max-width: 900px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(255, 255, 255, 0.2);
+            background: #111;
+        }
+
+        video {
+            width: 100%;
+            display: block;
+        }
+
+        .hint {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #888;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="scolding">你 被 骗 了</div>
+
+    <div class="video-wrapper">
+        <video controls autoplay name="media">
+            <source src="rickroll.mp4" type="video/mp4">
+            您的浏览器不支持 HTML5 视频。
+        </video>
+    </div>
+
+    <div class="hint">正在播放：Rick Astley - Never Gonna Give You Up</div>
+
+</body>
+
+</html>
